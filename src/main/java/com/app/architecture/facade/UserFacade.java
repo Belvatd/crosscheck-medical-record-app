@@ -62,6 +62,7 @@ public class UserFacade {
             //Checking params
             if (model == null ||
                     model.getFullName().isEmpty() || model.getNik().isEmpty()
+                    || model.getAddress().isEmpty()
 //                    || model.getDateOfBirth().equals("")
                     )
                 throw new InvalidParamException();

@@ -14,6 +14,7 @@ import java.util.Date;
 public class UserModel {
     private String citizensId;
     private String fullName;
+    private String address;
     private String nik;
     private Date dateOfBirth;
 }
