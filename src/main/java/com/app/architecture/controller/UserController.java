@@ -40,15 +40,15 @@ public class UserController {
     /**
      * Get user by id
      *
-     * @param userId as String
+     * @param citizensId as String
      * @return User
      * @throws ArchitectureException
      */
     @GetMapping("/{id}")
     @ApiOperation(value = "Get User", response = User.class)
 
-    public ResponseEntity<Object> getUser(@RequestHeader String userId) throws ArchitectureException {
-        return ResponseHandler.response(HttpStatus.OK, facade.getUser(userId), true);
+    public ResponseEntity<Object> getUser(@RequestHeader String citizensId) throws ArchitectureException {
+        return ResponseHandler.response(HttpStatus.OK, facade.getUser(citizensId), true);
     }
     @GetMapping
     @ApiOperation(value = "Get All Users", response = User.class)

@@ -25,17 +25,17 @@ public class UserFacade {
     /**
      * Get user by id
      *
-     * @param userId as String
+     * @param citizensId as String
      * @return User
      * @throws ArchitectureException
      */
-    public Object getUser(String userId) throws ArchitectureException {
+    public Object getUser(String citizensId) throws ArchitectureException {
         try {
             //Checking params
-            if (userId.isEmpty())
+            if (citizensId.isEmpty())
                 throw new InvalidParamException();
             //Checking user
-            User user = userService.getUserById(userId);
+            User user = userService.getUserById(citizensId);
             if (user == null)
                 throw new UserNotFoundException();
             return user;
@@ -61,10 +61,12 @@ public class UserFacade {
         try {
             //Checking params
             if (model == null ||
-                    model.getName().isEmpty() || model.getUsername().isEmpty())
+                    model.getFullName().isEmpty() || model.getNik().isEmpty()
+//                    || model.getDateOfBirth().equals("")
+                    )
                 throw new InvalidParamException();
             //Checking if user is already exist
-            User existUser = userService.getUserById(model.getUserId());
+            User existUser = userService.getUserById(model.getCitizensId());
             if (existUser != null)
                 throw new UserAlreadyExistException();
             //Mapping model UserModel -> User

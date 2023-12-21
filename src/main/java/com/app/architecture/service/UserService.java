@@ -23,11 +23,11 @@ public class UserService {
     /**
      * Get user by id
      *
-     * @param id as String
+     * @param citizensId as String
      * @return User
      */
-    public User getUserById(String id) {
-        return repository.getUserByUserId(id);
+    public User getUserById(String citizensId) {
+        return repository.getUserByCitizensId(citizensId);
     }
 
     /**
@@ -41,7 +41,7 @@ public class UserService {
     }
 
     public List<User> getAllUsers() {
-        String sql = "SELECT * FROM users";
+        String sql = "SELECT * FROM citizens";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(User.class));
 //        return repository.findAll();
     }

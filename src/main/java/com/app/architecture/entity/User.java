@@ -6,9 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-@Table(name = "users")
+@Table(name = "citizens")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,13 +18,15 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userId", nullable = false, unique = true)
-    private String userId;
+    @Column(name = "citizensId", nullable = false, unique = true)
+    private String citizensId;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "fullName")
+    private String fullName;
 
-    @Column(name = "username")
-    private String username;
+    @Column(name = "nik")
+    private String nik;
 
+    @Column(name = "dateOfBirth")
+    private Date dateOfBirth;
 }

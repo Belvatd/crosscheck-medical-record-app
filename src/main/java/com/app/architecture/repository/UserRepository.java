@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<User, String> {
 
     /**
-     * SQL query: SELECT * FROM users WHERE userId =
+     * SQL query: SELECT * FROM users WHERE citizensId =
      *
-     * @param userId as String
+     * @param citizensId as String
      * @return User
      */
-    User getUserByUserId(String userId);
+    User getUserByCitizensId(String citizensId);
 }
